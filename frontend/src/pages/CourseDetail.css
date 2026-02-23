@@ -1,0 +1,445 @@
+/* ===== COURSE DETAIL PAGE ===== */
+.cd-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.cd-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.cd-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: #6366f1;
+    top: -100px;
+    left: -100px;
+    animation: float 9s ease-in-out infinite;
+}
+
+.cd-orb-2 {
+    width: 350px;
+    height: 350px;
+    background: #06b6d4;
+    bottom: -50px;
+    right: -100px;
+    animation: float 11s ease-in-out infinite reverse;
+}
+
+.cd-loader-page,
+.cd-error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-muted);
+}
+
+/* Hero */
+.cd-hero {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 0 60px;
+}
+
+.cd-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.cd-back {
+    display: inline-block;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 28px;
+    transition: color 0.3s;
+}
+
+.cd-back:hover {
+    color: var(--text-primary);
+}
+
+.cd-hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.cd-hero-text {
+    flex: 1;
+    max-width: 650px;
+}
+
+.cd-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.cd-badge {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.cd-badge.level {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.cd-badge.category {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fcd34d;
+    border-color: rgba(251, 191, 36, 0.2);
+}
+
+.cd-hero-text h1 {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.cd-instructor-line {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.cd-instructor-line strong {
+    color: var(--text-primary);
+}
+
+.cd-hero-stats {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Price Card */
+.cd-price-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    min-width: 280px;
+    text-align: center;
+    box-shadow: var(--glow-purple);
+    transform: translateY(40px);
+}
+
+.cd-price-amount {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.cd-enroll-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--gradient-success);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 17px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.cd-enroll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+.cd-guarantee {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.cd-price-features {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+
+/* Content Layout */
+.cd-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 24px 60px;
+    display: flex;
+    gap: 40px;
+}
+
+.cd-left {
+    flex: 2;
+}
+
+.cd-right {
+    flex: 1;
+    padding-top: 30px;
+}
+
+/* Sections */
+.cd-section {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.cd-section-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cd-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* Modules */
+.cd-modules {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cd-module-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: all 0.3s;
+    animation: fadeInUp 0.5s ease-out backwards;
+    cursor: pointer;
+}
+
+.cd-module-item:hover {
+    border-color: var(--border-hover);
+    background: var(--bg-glass-hover);
+}
+
+.cd-module-item.expanded {
+    border-color: rgba(99, 102, 241, 0.3);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.cd-mod-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-muted);
+    min-width: 32px;
+    margin-top: 2px;
+}
+
+.cd-mod-info {
+    flex: 1;
+}
+
+.cd-mod-info h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.cd-mod-info p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.cd-mod-toggle {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.cd-mod-preview {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.preview-item {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.preview-item:last-child {
+    border-bottom: none;
+}
+
+/* Sidebar Cards */
+.cd-sidebar-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.cd-sidebar-card h3 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.cd-learn-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cd-learn-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cd-learn-list li:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    color: #10b981;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.cd-includes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cd-include-item {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cd-include-item:last-child {
+    border-bottom: none;
+}
+
+/* Instructor Card */
+.instructor-card .instructor-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.instructor-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.instructor-name {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.instructor-bio {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+    .cd-content {
+        flex-direction: column;
+    }
+
+    .cd-price-card {
+        transform: none;
+        margin-top: 24px;
+        width: 100%;
+    }
+
+    .cd-hero-text h1 {
+        font-size: 30px;
+    }
+
+    .cd-right {
+        padding-top: 0;
+    }
+
+    .cd-hero-stats {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
