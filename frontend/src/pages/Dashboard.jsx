@@ -13,7 +13,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchDashboardStats = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/dashboard', {
+                const { data } = await axios.get('/api/dashboard', {
                     headers: { Authorization: `Bearer ${user?.token}` }
                 });
                 setStats(data);
