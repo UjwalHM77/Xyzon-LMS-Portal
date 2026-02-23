@@ -2,7 +2,7 @@
 
 A premium **Learning Management System** built with the **MERN Stack** (MongoDB, Express.js, React.js, Node.js) — featuring a dark glassmorphism UI, animated gradients, and a fully functional student portal.
 
-> **AICTE Internship Project** — Ujwal Rai
+> **AICTE Internship Project** — Ujwal HM
 
 ---
 
@@ -151,7 +151,7 @@ npm run dev
 
 ## 👤 Author
 
-**Ujwal Rai** — [GitHub](https://github.com/UjwalHM77)
+**Ujwal HM** — [GitHub](https://github.com/UjwalHM77)
 
 ---
 

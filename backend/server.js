@@ -16,7 +16,7 @@ app.use(express.json());
 const users = [
     {
         _id: 'u1',
-        name: 'Ujwal Rai',
+        name: 'Ujwal HM',
         email: 'ujwal@gmail.com',
         password: '123456',
         role: 'student',
